@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+USER_SSH_DIR=$HOME/.ssh
+
+mkdir -p $USER_SSH_DIR
+chmod 0700 $USER_SSH_DIR
+
+cat >> $USER_SSH_DIR/authorized_keys <<EOF
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCSinFMwFMgSaLIWRT3+b92V9WGzONLqDbwDgINy1wYNjSmSykq7HDXxFqnSpA4uZskrea6OwtxQyOCYuXOZwXQb5liJI0MCvTaLMOkYln+rKOEBY1ZEkl+iOY8i5soLT6Bo0BK7MFh7rcAgYTtTqGeBFfsH3JYvKtwnCIni9lQNFfP9TIp3shvcKKO1RvxQZYYViPs2EBQFsskrTFS4Hr54j/1tHFZ/zR0U5prCdqRDzUNGR17McEiOL0npy8g1rpov7dnLgHxKPQQk93wt6zycJvo9exhqUGvA4mG+5zGGcH2DsHy2AcDWUVYuYP1mQSPKViHDfyGEiAJPINwZCh9 lawrence@Pengtianzis-MacBook-Pro.local
+EOF
+chmod 0600 $USER_SSH_DIR/authorized_keys
+
+echo "Done."
